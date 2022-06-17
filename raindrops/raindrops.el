@@ -9,8 +9,25 @@
 
 
 (defun convert (n)
-  "Convert integer N to its raindrops string."
+  (let ((lst '()) (number 1))
+    (dotimes (elt (floor (sqrt n)))
+      (setq number (+ 1 elt))
+      (if (= 0 (% n number))
+          (progn
+            (add-to-list 'lst number)
+            (add-to-list 'lst (/ n number))
+            )
+        )
+      )
+    )
   )
+
+
+
+(convert 11)
+
+
+
 
 
 

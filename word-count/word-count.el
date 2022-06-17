@@ -5,6 +5,7 @@
 ;;; Code:
 
 (append '((c . d) (e . f)) (list (cons 'a 'b)))
+(append (list 3 4) (list 3))
 (defun word-count (words)
   (let ((wlist (split-string (downcase (replace-regexp-in-string "[^a-z1-9]" " " words)))) (wclist nil))
     (while wlist
